@@ -51,13 +51,13 @@
 // sayHello();
 
 // recursion
-function sayHello(times) {
-    if (times == 0) return;
-    console.log('hello');
-    sayHello(times-1);
-}
+// function sayHello(times) {
+//     if (times == 0) return;
+//     console.log('hello');
+//     sayHello(times-1);
+// }
 
-sayHello(3);
+// sayHello(3);
 
 /*
     Recursion Tree:
@@ -105,3 +105,86 @@ sayHello(3);
     2
     1
 */
+
+// function print(number) {
+//     if (number == 0) return;
+//     console.log(number);
+//     print(number - 1);
+// }
+
+// print(5);
+
+/*
+    Recursion Tree:
+
+    print(5)
+        - number = 5; 5 == 0; false
+        - console.log(5)
+        - print(4)
+            - number = 4; 4 == 0; false
+            - console.log(4)
+            - print(3)
+                - number = 3; 3 == 0; false
+                - console.log(3)
+                - print(2)
+                    - number = 2; 2 == 0; false
+                    - console.log(2)
+                    - print(1)
+                        - number = 1; 1 == 0; false
+                        - console.log(1)
+                        - print(0)
+                            - number = 0; 0 == 0; true
+*/
+
+function print(number) {
+    if (number == 0) return;
+
+    print(number - 1);
+    console.log(number);
+}
+
+print(5);
+
+/*
+    print(5)
+        - number = 5; 5 == 0; false
+        - print(4)
+            - number = 4; 4 == 0; false
+            - print(3)
+                - number = 3; 3 == 0; false
+                - print(2)
+                    - number = 2; 2 == 0; false
+                    - print(1)
+                        - number = 1; 1 == 0; false
+                        - print(0)
+                            - number = 0; 0 == 0; true; return ✅
+                        - console.log(number) 🕐
+                    - console.log(number) 🕐
+                - console.log(number) 🕐
+            - console.log(number) 🕐
+        - console.log(number) 🕐
+
+
+    print(5)
+*/
+
+/*
+    Problem: Write a recursion function to find and print the sum of first N natural numbers
+
+    Input: 3
+    Output: 6
+
+    Explanation: 1 + 2 + 3 = 6
+
+    Input: 5
+    Output: 15
+
+    Explanation: 1 + 2 + 3 + 4 + 5 = 15
+*/
+
+// recursive function to return the sum of first N natural numbers
+function S(N) {
+    
+}
+
+console.log(S(5)); // output: 15
