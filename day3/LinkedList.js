@@ -145,20 +145,61 @@ class LinkedList {
     // homework
     // inserts the node to the start/head of the list
     insertHead(data) {
-        
+        // create a new node
+        let newNode = new Node(data);
+
+        newNode.next = this.head;
+
+        this.head = newNode;
     }
 
     // returns the number of nodes in the list
     length() {
-        
+        // let nodes = [];
+        // let thead = this.head;
+        // while (thead != null) {
+        //     nodes.push(thead.data);
+        //     thead = thead.next;
+        // }
+        // console.log(nodes.length);
+
+        let nodes = 0;
+        let thead = this.head;
+        while (thead != null) {
+            nodes++;
+            thead = thead.next;
+        }
+        console.log(nodes);
     }
 
     deleteTail() {
-        
+        if (this.head == null) {
+            // should not allow the deletion
+            return;
+        } else if (this.head.next == null) {
+            // only one node in the list
+            this.head = null;
+        } else {
+            // more than one node
+            let tail = this.head;
+
+            while (tail.next.next != null) {
+                tail = tail.next;
+            }
+
+            // tail.next.next == null
+            tail.next = null;
+        }
     }
 
     deleteHead() {
-        
+        if (this.head == null) {
+            // empty list
+            return;
+        } else {
+            // one or more than one node
+            this.head = this.head.next;
+        }
     }
 
     middleNode() {
@@ -178,10 +219,51 @@ list.insertTail(10);
 list.insertTail(2);
 list.insertTail(3);
 list.insertTail(4);
+list.insertHead(6);
+list.deleteTail();
+list.deleteTail();
+list.deleteHead();
 
 list.printList();
+list.length();
 
 /*
+    list = LinkedList {
+        head: Node {
+            data: 6,
+            next: Node {
+                data: 10,
+                next: Node {
+                    data: 2,
+                    next: Node {
+                        data: 3,
+                        next: Node {
+                            data: 4,
+                            next: null
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    newNode = Node {
+        data: 6,
+        next: Node {
+            data: 10,
+            next: Node {
+                data: 2,
+                next: Node {
+                    data: 3,
+                    next: Node {
+                        data: 4,
+                        next: null
+                    }
+                }
+            }
+        }
+    }
+
     list = LinkedList {
         head: Node {
             data: 10,
@@ -194,4 +276,15 @@ list.printList();
             }
         }
     }
+
+    
+*/
+
+/*
+    Linked List over Arrays
+
+    1. Faster Insertions/Deletions
+    2. Memory utilization
+
+    
 */
