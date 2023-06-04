@@ -136,14 +136,14 @@
                             - number = 0; 0 == 0; true
 */
 
-function print(number) {
-    if (number == 0) return;
+// function print(number) {
+//     if (number == 0) return;
 
-    print(number - 1);
-    console.log(number);
-}
+//     print(number - 1);
+//     console.log(number);
+// }
 
-print(5);
+// print(5);
 
 /*
     print(5)
@@ -183,8 +183,112 @@ print(5);
 */
 
 // recursive function to return the sum of first N natural numbers
-function S(N) {
+// function S(N) {
     
-}
+// }
 
-console.log(S(5)); // output: 15
+// console.log(S(5)); // output: 15
+
+/*
+    Recurrence Relation
+
+    Let S(N) = ?
+
+    Start from the base cases:
+
+    For N = 1, S(1) = 1
+    ----------------------
+
+    For N = 2, S(2) = 1 + 2 = 3
+    For N = 3, S(3) = 1 + 2 + 3 = 6
+    For N = 4, S(4) = 1 + 2 + 3 + 4 = 10
+    For N = 5, S(5) = 1 + 2 + 3 + 4 + 5 = 15
+
+    Backward Substitution:
+
+    For N = 1, S(1) = 1
+    ----------------------
+
+    For N = 2, S(2) = S(1) + 2 = 3
+    For N = 3, S(3) = S(2) + 3 = 6
+    For N = 4, S(4) = S(3) + 4 = 10
+    For N = 5, S(5) = S(4) + 5 = 15
+
+    Generalize:
+
+    For N = 1, S(N) = 1
+    For N > 1, S(N) = S(N-1) + N
+*/
+
+// function S(N) {
+//     // For N = 1, S(N) = 1
+//     if (N == 1) return 1;
+//     // For N > 1, S(N) = S(N-1) + N
+//     return S(N - 1) + N;
+// }
+
+// console.log(S(3)); // output: 15
+
+/*
+    function F(N){
+        
+    }
+
+    console.log(F(3)); // output: 6
+
+    3! = 3 * 2 * 1 = 6
+    5! = 5 * 4 * 3 * 2 * 1 = 120
+*/
+
+/*
+    Recurrence Relation
+
+    Let F(N) = ?
+
+    Start from the base cases:
+
+    For N = 0, F(0) = 1 Edge case
+    For N = 1, F(1) = 1
+    ----------------------
+
+    For N = 2, F(2) = 1 * 2 = 2
+    For N = 3, F(3) = 1 * 2 * 3 = 6
+    For N = 4, F(4) = 1 * 2 * 3 * 4 = 24
+    For N = 5, F(5) = 1 * 2 * 3 * 4 * 5 = 120
+
+    Backward Substitution:
+
+    For N = 0, F(0) = 1
+    For N = 1, F(1) = 1
+    ----------------------
+
+    For N = 2, F(2) = F(1) * 2 = 2
+    For N = 3, F(3) = F(2) * 3 = 6
+    For N = 4, F(4) = F(3) * 4 = 24
+    For N = 5, F(5) = F(4) * 5 = 120
+
+    Generalize:
+
+    For N = 0 and N = 1, F(N) = 1
+    For N > 1, F(N) = F(N-1) * N
+*/
+
+// function F(N) {
+//     if (N == 0 || N == 1) return 1;
+//     return F(N - 1) * N;
+// }
+
+// console.log(F(5));
+
+/*
+    homeworks:
+
+    1. find the sum of the given array using recursion
+    2. check whether a string is a palindrome or not using recursion example: madam, malayalam, ...
+    3. reverse a given string using recursion example: apple output: elppa
+    4. find the nth fibonacci number using recursion
+        0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+
+        Input: 5
+        Output: 3
+*/
